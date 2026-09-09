@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+
+{% block title %}Taforma | Calendario de Competencias{% endblock %}
+{% block meta_description %}Consulta el calendario de competencias de atletismo y ciclismo organizadas con Taforma: fechas, sedes, disciplinas y estado de cada evento.{% endblock %}
+
+{% block nav_links %}
+<a href="{% url 'calendar' %}">Calendario</a>
+<a href="{% url 'championships' %}">Campeonatos</a>
+<a href="{% url 'principal' %}#como-funciona">Ranking</a>
+<a href="{% url 'principal' %}#contacto">Contacto</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="page-header-inner">
+            <div>
+                <h1>Calendario de competencias</h1>
+                <p>Fechas, sedes y estado de cada competencia organizada con Taforma. Datos de ejemplo con fines ilustrativos.</p>
+            </div>
+            <div class="page-header-meta">
+                <span>12 competencias · Temporada 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cal-toolbar">
+        <div class="cal-filters" id="calFilters">
+            <button type="button" class="cal-filter is-active" data-filter="todas">Todas</button>
+            <button type="button" class="cal-filter" data-filter="atletismo">Atletismo</button>
+            <button type="button" class="cal-filter" data-filter="ciclismo">Ciclismo</button>
+            <button type="button" class="cal-filter" data-filter="en-vivo">En vivo</button>
+            <button type="button" class="cal-filter" data-filter="proximas">Próximas</button>
+        </div>
+        <div class="cal-view-switch" id="calViewSwitch">
+            <button type="button" class="cal-view-btn is-active" data-view="agenda">Lista</button>
+            <button type="button" class="cal-view-btn" data-view="grid">Cuadrícula</button>
+        </div>
+    </div>
+
+    <div class="cal-agenda" id="calAgendaView">
+
+        <div class="cal-month-group">
+            <div class="cal-month-label">Septiembre 2026</div>
+
+            <div class="cal-event-row" data-disciplina="atletismo" data-estado="en-vivo">
+                <div class="cal-event-date">12–14 SEP</div>
+                <div class="cal-event-info">
+                    <h3>Campeonato Nacional Sub-20</h3>
+                    <div class="cal-event-meta">
+                        <span>Santiago, CHI</span>
+                        <span>Pista · Campo</span>
+                        <span>8 categorías</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="live-tag"><span class="dot"></span> En vivo</span></div>
+            </div>
+
+            <div class="cal-event-row" data-disciplina="ciclismo" data-estado="en-vivo">
+                <div class="cal-event-date">20 SEP</div>
+                <div class="cal-event-info">
+                    <h3>Vuelta Regional Elite — Etapa 3</h3>
+                    <div class="cal-event-meta">
+                        <span>Valparaíso, CHI</span>
+                        <span>Ruta · 118km</span>
+                        <span>Categoría Elite</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="live-tag"><span class="dot"></span> En vivo</span></div>
+            </div>
+
+            <div class="cal-event-row" data-disciplina="atletismo" data-estado="proximas">
+                <div class="cal-event-date">27 SEP</div>
+                <div class="cal-event-info">
+                    <h3>Copa Metropolitana Sub-18</h3>
+                    <div class="cal-event-meta">
+                        <span>Providencia, CHI</span>
+                        <span>Pista</span>
+                        <span>5 categorías</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="state-tag is-pending">Próxima</span></div>
+            </div>
+        </div>
+
+        <div class="cal-month-group">
+            <div class="cal-month-label">Octubre 2026</div>
+
+            <div class="cal-event-row" data-disciplina="atletismo" data-estado="proximas">
+                <div class="cal-event-date">4 OCT</div>
+                <div class="cal-event-info">
+                    <h3>Meeting Internacional de Velocidad</h3>
+                    <div class="cal-event-meta">
+                        <span>Antofagasta, CHI</span>
+                        <span>Pista</span>
+                        <span>Invitacional</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="state-tag is-pending">Próxima</span></div>
+            </div>
+
+            <div class="cal-event-row" data-disciplina="ciclismo" data-estado="proximas">
+                <div class="cal-event-date">11 OCT</div>
+                <div class="cal-event-info">
+                    <h3>Contrarreloj Individual Regional</h3>
+                    <div class="cal-event-meta">
+                        <span>Concepción, CHI</span>
+                        <span>Contrarreloj · 24km</span>
+                        <span>Elite · Sub-23</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="state-tag is-pending">Próxima</span></div>
+            </div>
+
+            <div class="cal-event-row" data-disciplina="atletismo" data-estado="proximas">
+                <div class="cal-event-date">18 OCT</div>
+                <div class="cal-event-info">
+                    <h3>Campeonato de Pruebas Combinadas</h3>
+                    <div class="cal-event-meta">
+                        <span>Rancagua, CHI</span>
+                        <span>Heptatlón · Decatlón</span>
+                        <span>Sub-20 · Elite</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="state-tag is-pending">Próxima</span></div>
+            </div>
+        </div>
+
+        <div class="cal-month-group">
+            <div class="cal-month-label">Noviembre 2026</div>
+
+            <div class="cal-event-row" data-disciplina="atletismo" data-estado="proximas">
+                <div class="cal-event-date">8 NOV</div>
+                <div class="cal-event-info">
+                    <h3>Campeonato Nacional de Marcha</h3>
+                    <div class="cal-event-meta">
+                        <span>Viña del Mar, CHI</span>
+                        <span>Marcha · Ruta</span>
+                        <span>Todas las categorías</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="state-tag is-pending">Próxima</span></div>
+            </div>
+
+            <div class="cal-event-row" data-disciplina="ciclismo" data-estado="proximas">
+                <div class="cal-event-date">15 NOV</div>
+                <div class="cal-event-info">
+                    <h3>Vuelta Regional Elite — Etapa Final</h3>
+                    <div class="cal-event-meta">
+                        <span>Valparaíso, CHI</span>
+                        <span>Ruta · 96km</span>
+                        <span>Categoría Elite</span>
+                    </div>
+                </div>
+                <div class="cal-event-status"><span class="state-tag is-pending">Próxima</span></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cal-grid-wrap" id="calGridView" style="display:none;">
+        <div class="cal-grid-head">
+            <button type="button" class="cal-grid-nav" aria-label="Mes anterior">‹</button>
+            <div class="cal-grid-title">Septiembre 2026</div>
+            <button type="button" class="cal-grid-nav" aria-label="Mes siguiente">›</button>
+        </div>
+
+        <div class="cal-grid">
+            <div class="cal-grid-weekdays">
+                <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+            </div>
+            <div class="cal-grid-days">
+                <div class="cal-grid-day is-muted"><span class="day-num">31</span></div>
+                <div class="cal-grid-day"><span class="day-num">1</span></div>
+                <div class="cal-grid-day"><span class="day-num">2</span></div>
+                <div class="cal-grid-day"><span class="day-num">3</span></div>
+                <div class="cal-grid-day"><span class="day-num">4</span></div>
+                <div class="cal-grid-day"><span class="day-num">5</span></div>
+                <div class="cal-grid-day"><span class="day-num">6</span></div>
+
+                <div class="cal-grid-day"><span class="day-num">7</span></div>
+                <div class="cal-grid-day"><span class="day-num">8</span></div>
+                <div class="cal-grid-day"><span class="day-num">9</span></div>
+                <div class="cal-grid-day"><span class="day-num">10</span></div>
+                <div class="cal-grid-day"><span class="day-num">11</span></div>
+                <div class="cal-grid-day has-event">
+                    <span class="day-num">12</span>
+                    <span class="day-event is-live">Nacional Sub-20</span>
+                </div>
+                <div class="cal-grid-day has-event">
+                    <span class="day-num">13</span>
+                    <span class="day-event is-live">Nacional Sub-20</span>
+                </div>
+
+                <div class="cal-grid-day has-event">
+                    <span class="day-num">14</span>
+                    <span class="day-event is-live">Nacional Sub-20</span>
+                </div>
+                <div class="cal-grid-day"><span class="day-num">15</span></div>
+                <div class="cal-grid-day"><span class="day-num">16</span></div>
+                <div class="cal-grid-day"><span class="day-num">17</span></div>
+                <div class="cal-grid-day"><span class="day-num">18</span></div>
+                <div class="cal-grid-day"><span class="day-num">19</span></div>
+                <div class="cal-grid-day has-event">
+                    <span class="day-num">20</span>
+                    <span class="day-event is-cycling">Vuelta Regional</span>
+                </div>
+
+                <div class="cal-grid-day"><span class="day-num">21</span></div>
+                <div class="cal-grid-day"><span class="day-num">22</span></div>
+                <div class="cal-grid-day"><span class="day-num">23</span></div>
+                <div class="cal-grid-day"><span class="day-num">24</span></div>
+                <div class="cal-grid-day"><span class="day-num">25</span></div>
+                <div class="cal-grid-day"><span class="day-num">26</span></div>
+                <div class="cal-grid-day has-event">
+                    <span class="day-num">27</span>
+                    <span class="day-event">Copa Metropolitana</span>
+                </div>
+
+                <div class="cal-grid-day"><span class="day-num">28</span></div>
+                <div class="cal-grid-day"><span class="day-num">29</span></div>
+                <div class="cal-grid-day"><span class="day-num">30</span></div>
+                <div class="cal-grid-day is-muted"><span class="day-num">1</span></div>
+                <div class="cal-grid-day is-muted"><span class="day-num">2</span></div>
+                <div class="cal-grid-day is-muted"><span class="day-num">3</span></div>
+                <div class="cal-grid-day is-muted"><span class="day-num">4</span></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        function initCalendar() {
+            const filters = document.getElementById('calFilters');
+            const viewSwitch = document.getElementById('calViewSwitch');
+            const agendaView = document.getElementById('calAgendaView');
+            const gridView = document.getElementById('calGridView');
+            if (!filters || !viewSwitch) return;
+
+            const rows = Array.from(agendaView.querySelectorAll('.cal-event-row'));
+
+            filters.addEventListener('click', (e) => {
+                const btn = e.target.closest('.cal-filter');
+                if (!btn) return;
+                filters.querySelectorAll('.cal-filter').forEach((b) => b.classList.toggle('is-active', b === btn));
+
+                const filter = btn.dataset.filter;
+                rows.forEach((row) => {
+                    let visible = true;
+                    if (filter === 'atletismo' || filter === 'ciclismo') {
+                        visible = row.dataset.disciplina === filter;
+                    } else if (filter === 'en-vivo' || filter === 'proximas') {
+                        visible = row.dataset.estado === filter;
+                    }
+                    row.style.display = visible ? '' : 'none';
+                });
+
+                agendaView.querySelectorAll('.cal-month-group').forEach((group) => {
+                    const anyVisible = Array.from(group.querySelectorAll('.cal-event-row')).some((r) => r.style.display !== 'none');
+                    group.style.display = anyVisible ? '' : 'none';
+                });
+            });
+
+            viewSwitch.addEventListener('click', (e) => {
+                const btn = e.target.closest('.cal-view-btn');
+                if (!btn) return;
+                viewSwitch.querySelectorAll('.cal-view-btn').forEach((b) => b.classList.toggle('is-active', b === btn));
+
+                const view = btn.dataset.view;
+                agendaView.style.display = view === 'agenda' ? '' : 'none';
+                gridView.style.display = view === 'grid' ? '' : 'none';
+            });
+        }
+
+        initCalendar();
+    </script>
+{% endblock %}

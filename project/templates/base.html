@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Taforma | Gestión de Competencias de Atletismo{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Taforma es la plataforma para organizar competencias de atletismo, gestionar inscripciones y series, y publicar resultados oficiales en vivo.{% endblock %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'palettes/pista-roja.css' %}">
+    <link rel="stylesheet" href="{% static 'palettes/nocturna-estadio.css' %}">
+    <link rel="stylesheet" href="{% static 'palettes/photo-finish.css' %}">
+    <link rel="stylesheet" href="{% static 'palettes/podio.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <header class="masthead">
+        <div class="masthead-bar">
+            <a href="{% url 'principal' %}" class="brand">
+                <span class="wordmark">Taforma</span>
+            </a>
+
+            <nav class="links">
+                {% block nav_links %}
+                <a href="{% url 'calendar' %}">Calendario</a>
+                <a href="{% url 'championships' %}">Campeonatos</a>
+                <a href="#como-funciona">Ranking</a>
+                <a href="#contacto">Contacto</a>
+                {% endblock %}
+            </nav>
+
+            <div class="masthead-actions">
+                <a href="#" class="btn btn-ghost">Iniciar sesión</a>
+                <button class="menu-toggle" aria-label="Abrir menú"><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <a href="{% url 'principal' %}" class="brand" style="margin-bottom: 14px;">
+                    <span class="wordmark">Taforma</span>
+                </a>
+                <p style="color: #6b6353; font-size: 0.9rem; max-width: 280px;">
+                    Plataforma de gestión de competencias de atletismo.
+                </p>
+            </div>
+            <div>
+                <p class="footer-label">Producto</p>
+                <ul>
+                    <li><a href="#modulos">Módulos</a></li>
+                    <li><a href="#atletismo">Disciplinas</a></li>
+                    <li><a href="#como-funciona">Cómo funciona</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-label">Compañía</p>
+                <ul>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="footer-label">Legal</p>
+                <ul>
+                    <li><a href="#">Términos de servicio</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Taforma. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+
+    <script>
+        const PALETTES = [
+            { id: 'pista-roja', name: 'Pista Roja', desc: 'Tartán · energía de pista' },
+            { id: 'nocturna-estadio', name: 'Nocturna de Estadio', desc: 'Luces · transmisión en vivo' },
+            { id: 'photo-finish', name: 'Photo-Finish', desc: 'Alto contraste · línea de meta' },
+            { id: 'podio', name: 'Podio', desc: 'Medalla · calidez de premiación' }
+        ];
+
+        const PALETTE_STORAGE_KEY = 'taforma-palette';
+
+        function applyPalette(id) {
+            document.documentElement.setAttribute('data-palette', id);
+            document.querySelectorAll('.palette-btn').forEach((btn) => {
+                btn.classList.toggle('active', btn.dataset.id === id);
+            });
+        }
+
+        function renderPaletteRow() {
+            const row = document.getElementById('paletteRow');
+            if (!row) return;
+            row.innerHTML = PALETTES.map((p) => `
+                <button type="button" class="palette-btn" data-id="${p.id}" aria-label="Aplicar paleta ${p.name}">
+                    <span class="p-check">✓</span>
+                    <span class="p-swatches" data-palette="${p.id}">
+                        <span class="p-swatch p-swatch--red"></span>
+                        <span class="p-swatch p-swatch--amber"></span>
+                        <span class="p-swatch p-swatch--green"></span>
+                        <span class="p-swatch p-swatch--charcoal"></span>
+                    </span>
+                    <span class="p-name">${p.name}</span>
+                    <span class="p-desc">${p.desc}</span>
+                </button>
+            `).join('');
+
+            row.querySelectorAll('.palette-btn').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    applyPalette(btn.dataset.id);
+                    try {
+                        localStorage.setItem(PALETTE_STORAGE_KEY, btn.dataset.id);
+                    } catch (e) {
+                        /* localStorage no disponible; el cambio sigue aplicado en la sesión */
+                    }
+                });
+            });
+        }
+
+        function initPalette() {
+            renderPaletteRow();
+            let savedId = null;
+            try {
+                savedId = localStorage.getItem(PALETTE_STORAGE_KEY);
+            } catch (e) {
+                /* localStorage no disponible; se usa la paleta por defecto */
+            }
+            const saved = PALETTES.find((p) => p.id === savedId);
+            if (saved) applyPalette(saved.id);
+        }
+
+        initPalette();
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

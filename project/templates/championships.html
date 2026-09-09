@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block title %}Taforma | Campeonatos{% endblock %}
+{% block meta_description %}Explora los campeonatos organizados con Taforma: inscripciones, series, resultados en vivo y rankings de cada competencia.{% endblock %}
+
+{% block nav_links %}
+<a href="{% url 'calendar' %}">Calendario</a>
+<a href="{% url 'championships' %}">Campeonatos</a>
+<a href="{% url 'principal' %}#como-funciona">Ranking</a>
+<a href="{% url 'principal' %}#contacto">Contacto</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="page-header-inner">
+            <div>
+                <h1>Campeonatos</h1>
+                <p>Cada campeonato organizado con Taforma, con sus inscripciones, series, resultados y rankings. Datos de ejemplo con fines ilustrativos.</p>
+            </div>
+            <div class="page-header-meta">
+                <span>12 campeonatos · Temporada 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="cal-toolbar">
+        <div class="cal-filters" id="champFilters">
+            <button type="button" class="cal-filter is-active" data-filter="todos">Todos</button>
+            <button type="button" class="cal-filter" data-filter="atletismo">Atletismo</button>
+            <button type="button" class="cal-filter" data-filter="ciclismo">Ciclismo</button>
+            <button type="button" class="cal-filter" data-filter="en-vivo">En vivo</button>
+            <button type="button" class="cal-filter" data-filter="inscripciones">Inscripciones abiertas</button>
+        </div>
+    </div>
+
+    <div class="champ-list" id="champList">
+
+        <a href="{% url 'championship_detail' slug='nacional-sub-20' %}" class="champ-row" data-disciplina="atletismo" data-estado="en-vivo">
+            <div class="champ-row-top">
+                <h3>Campeonato Nacional Sub-20</h3>
+                <span class="live-tag"><span class="dot"></span> En vivo</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Santiago, CHI</span>
+                <span>12–14 SEP 2026</span>
+                <span><b>8</b> categorías</span>
+                <span><b>412</b> atletas inscritos</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                <span class="champ-mod is-live">Resultados en vivo</span>
+                <span class="champ-mod is-open">Rankings</span>
+            </div>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="ciclismo" data-estado="en-vivo">
+            <div class="champ-row-top">
+                <h3>Vuelta Regional Elite</h3>
+                <span class="live-tag"><span class="dot"></span> En vivo</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Valparaíso, CHI</span>
+                <span>18–20 SEP 2026</span>
+                <span><b>1</b> categoría</span>
+                <span><b>84</b> corredores inscritos</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                <span class="champ-mod is-live">Resultados en vivo</span>
+                <span class="champ-mod is-open">Rankings</span>
+            </div>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
+            <div class="champ-row-top">
+                <h3>Copa Metropolitana Sub-18</h3>
+                <span class="state-tag is-pending">Próxima</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Providencia, CHI</span>
+                <span>27 SEP 2026</span>
+                <span><b>5</b> categorías</span>
+                <span><b>168</b> atletas inscritos</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-open">Inscripciones abiertas</span>
+                <span class="champ-mod is-closed">Resultados</span>
+                <span class="champ-mod is-closed">Rankings</span>
+            </div>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
+            <div class="champ-row-top">
+                <h3>Meeting Internacional de Velocidad</h3>
+                <span class="state-tag is-pending">Próxima</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Antofagasta, CHI</span>
+                <span>4 OCT 2026</span>
+                <span>Invitacional</span>
+                <span><b>56</b> atletas confirmados</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-open">Inscripciones abiertas</span>
+                <span class="champ-mod is-closed">Resultados</span>
+                <span class="champ-mod is-closed">Rankings</span>
+            </div>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="ciclismo" data-estado="inscripciones">
+            <div class="champ-row-top">
+                <h3>Contrarreloj Individual Regional</h3>
+                <span class="state-tag is-pending">Próxima</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Concepción, CHI</span>
+                <span>11 OCT 2026</span>
+                <span><b>2</b> categorías</span>
+                <span><b>37</b> corredores inscritos</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-open">Inscripciones abiertas</span>
+                <span class="champ-mod is-closed">Resultados</span>
+                <span class="champ-mod is-closed">Rankings</span>
+            </div>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
+            <div class="champ-row-top">
+                <h3>Campeonato de Pruebas Combinadas</h3>
+                <span class="state-tag is-pending">Próxima</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Rancagua, CHI</span>
+                <span>18 OCT 2026</span>
+                <span><b>2</b> categorías</span>
+                <span><b>29</b> atletas inscritos</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-open">Inscripciones abiertas</span>
+                <span class="champ-mod is-closed">Resultados</span>
+                <span class="champ-mod is-closed">Rankings</span>
+            </div>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="finalizado">
+            <div class="champ-row-top">
+                <h3>Campeonato Regional Sub-16</h3>
+                <span class="state-tag">Finalizado</span>
+            </div>
+            <div class="champ-row-meta">
+                <span>Talca, CHI</span>
+                <span>8–9 AGO 2026</span>
+                <span><b>6</b> categorías</span>
+                <span><b>203</b> atletas participantes</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                <span class="champ-mod is-open">Resultados</span>
+                <span class="champ-mod is-open">Rankings</span>
+            </div>
+        </a>
+
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        function initChampionshipsFilter() {
+            const filters = document.getElementById('champFilters');
+            const list = document.getElementById('champList');
+            if (!filters || !list) return;
+
+            const rows = Array.from(list.querySelectorAll('.champ-row'));
+
+            filters.addEventListener('click', (e) => {
+                const btn = e.target.closest('.cal-filter');
+                if (!btn) return;
+                filters.querySelectorAll('.cal-filter').forEach((b) => b.classList.toggle('is-active', b === btn));
+
+                const filter = btn.dataset.filter;
+                rows.forEach((row) => {
+                    let visible = true;
+                    if (filter === 'atletismo' || filter === 'ciclismo') {
+                        visible = row.dataset.disciplina === filter;
+                    } else if (filter === 'en-vivo' || filter === 'inscripciones') {
+                        visible = row.dataset.estado === filter;
+                    }
+                    row.style.display = visible ? '' : 'none';
+                });
+            });
+        }
+
+        initChampionshipsFilter();
+    </script>
+{% endblock %}

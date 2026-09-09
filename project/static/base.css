@@ -906,12 +906,561 @@ footer {
     .cta-band p { max-width: none; }
     section { padding: 64px 20px; }
     .bulletin-meta { flex-wrap: wrap; gap: 10px 18px; }
-    table.bulletin th:nth-child(3), table.bulletin td:nth-child(3) { display: none; }
+    table.bulletin:not(.table-org) th:nth-child(3), table.bulletin:not(.table-org) td:nth-child(3) { display: none; }
     table.bulletin th, table.bulletin td { padding-left: 6px; padding-right: 6px; }
-    table.bulletin th:first-child, table.bulletin td:first-child { padding-left: 16px; width: 34px; }
+    table.bulletin:not(.table-org) th:first-child, table.bulletin:not(.table-org) td:first-child { padding-left: 16px; width: 34px; }
+    table.bulletin th:first-child { padding-left: 16px; }
     table.bulletin th:last-child, table.bulletin td:last-child { padding-right: 16px; }
+    table.bulletin.table-org th:nth-child(2), table.bulletin.table-org td:nth-child(2) { display: none; }
     .bulletin-head, .bulletin-meta, .bulletin-note, .bulletin-foot { padding-left: 16px; padding-right: 16px; }
     .hero-proof .stat { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* ---------- Page header (non-hero surfaces) ---------- */
+.page-header {
+    padding: 56px 28px 40px;
+    border-bottom: var(--edge);
+}
+
+.page-header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.page-header h1 {
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    font-weight: 800;
+}
+
+.page-header p {
+    color: #4a4437;
+    font-size: 1.02rem;
+    margin: 0;
+    max-width: 52ch;
+}
+
+.page-header-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #6b6353;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ---------- Calendar toolbar: filters + view switch ---------- */
+.cal-toolbar {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: var(--edge);
+}
+
+.cal-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cal-filter {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #4a4437;
+    background: transparent;
+    border: 1px solid var(--paper-line);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.cal-filter:hover { border-color: var(--ink); }
+
+.cal-filter.is-active {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+}
+
+.cal-view-switch {
+    display: inline-flex;
+    border: 1px solid var(--paper-line);
+}
+
+.cal-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #4a4437;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.cal-view-btn:not(:last-child) { border-right: 1px solid var(--paper-line); }
+
+.cal-view-btn.is-active {
+    background: var(--ink);
+    color: var(--paper);
+}
+
+/* ---------- Calendar: agenda / list view ---------- */
+.cal-agenda {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 28px 96px;
+}
+
+.cal-month-group {
+    margin-top: 48px;
+}
+
+.cal-month-label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--red-ink);
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 4px;
+}
+
+.cal-event-row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: var(--edge);
+}
+
+.cal-event-row:last-child { border-bottom: none; }
+
+.cal-event-date {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--ink);
+    white-space: nowrap;
+}
+
+.cal-event-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+}
+
+.cal-event-meta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: #6b6353;
+}
+
+.cal-event-status {
+    justify-self: end;
+}
+
+/* ---------- Calendar: grid view ---------- */
+.cal-grid-wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 28px 96px;
+}
+
+.cal-grid-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.cal-grid-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--paper-line);
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.cal-grid-nav:hover { border-color: var(--ink); background: var(--paper-2); }
+
+.cal-grid-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    min-width: 220px;
+    text-align: center;
+}
+
+.cal-grid {
+    border-top: 2px solid var(--ink);
+    border-left: var(--edge);
+}
+
+.cal-grid-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: var(--edge);
+}
+
+.cal-grid-weekdays span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b6353;
+    padding: 10px 12px;
+    border-right: var(--edge);
+}
+
+.cal-grid-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 108px;
+}
+
+.cal-grid-day {
+    border-right: var(--edge);
+    border-bottom: var(--edge);
+    padding: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cal-grid-day.is-muted { background: var(--paper-2); }
+
+.cal-grid-day .day-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: #6b6353;
+}
+
+.cal-grid-day.is-muted .day-num { color: #b3a98f; }
+
+.cal-grid-day .day-event {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.3;
+    padding: 3px 6px;
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cal-grid-day .day-event.is-live { background: var(--green); color: var(--green-text); }
+.cal-grid-day .day-event.is-cycling { background: var(--red); color: #fff2ef; }
+
+@media (max-width: 960px) {
+    .cal-grid-days { grid-auto-rows: 84px; }
+    .cal-grid-day .day-event { display: none; }
+    .cal-grid-day.has-event::after {
+        content: "";
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--red);
+    }
+}
+
+@media (max-width: 720px) {
+    .page-header-inner { flex-direction: column; align-items: flex-start; }
+    .page-header-meta { text-align: left; }
+    .cal-toolbar { flex-direction: column; align-items: stretch; }
+    .cal-event-row { grid-template-columns: 1fr; gap: 8px; }
+    .cal-event-status { justify-self: start; }
+    .cal-grid-title { min-width: 0; font-size: 1.1rem; }
+    .cal-grid-weekdays span { padding: 8px 4px; font-size: 0.62rem; }
+    .cal-grid-days { grid-auto-rows: 64px; }
+    .cal-grid-day { padding: 4px; }
+}
+
+/* ---------- Championships directory ---------- */
+.champ-list {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 8px 28px 96px;
+    border-top: 2px solid var(--ink);
+}
+
+.champ-row {
+    display: block;
+    padding: 28px 0;
+    border-bottom: var(--edge);
+    color: inherit;
+}
+
+.champ-row:last-child { border-bottom: none; }
+
+.champ-row-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.champ-row h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+    transition: color 0.15s ease;
+}
+
+.champ-row:hover h3 { color: var(--red-ink); }
+
+.champ-row-meta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #6b6353;
+    margin-bottom: 14px;
+}
+
+.champ-row-meta b { color: var(--ink); font-weight: 600; }
+
+.champ-modules {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.champ-mod {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border: 1px solid var(--paper-line);
+    color: #4a4437;
+}
+
+.champ-mod.is-open { border-color: var(--green); color: var(--green); }
+.champ-mod.is-closed { border-color: var(--paper-line); color: #a89f8d; }
+.champ-mod.is-live { border-color: var(--red); color: var(--red-ink); }
+
+@media (max-width: 720px) {
+    .champ-row-top { flex-direction: column; gap: 6px; }
+    .champ-list { padding: 8px 20px 64px; }
+}
+
+/* ---------- Championship detail ---------- */
+.champ-detail-header {
+    padding: 40px 28px;
+    border-bottom: var(--edge);
+}
+
+.champ-detail-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.champ-back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #6b6353;
+    margin-bottom: 20px;
+    transition: color 0.15s ease;
+}
+
+.champ-back:hover { color: var(--red-ink); }
+
+.champ-detail-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.champ-detail-top h1 {
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    letter-spacing: -0.02em;
+    margin: 0;
+    font-weight: 800;
+}
+
+.champ-detail-meta {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: #6b6353;
+    margin-bottom: 18px;
+}
+
+.champ-detail-meta b { color: var(--ink); font-weight: 600; }
+
+/* ---------- Championship detail: events nav + panels ---------- */
+.champ-detail-body {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 40px 28px 96px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.champ-events-nav {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--ink);
+    position: sticky;
+    top: 90px;
+}
+
+.champ-events-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b6353;
+    margin: 14px 0 6px;
+}
+
+.champ-event-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 4px;
+    border-bottom: var(--edge);
+    background: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: left;
+    font-family: var(--font-text);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #4a4437;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.champ-event-link:hover { color: var(--ink); }
+
+.champ-event-link.is-active { color: var(--red-ink); }
+
+.live-tag--sm {
+    padding: 4px 6px;
+    font-size: 0;
+}
+
+.live-tag--sm .dot { width: 5px; height: 5px; }
+
+.state-tag.is-pending-sm, .state-tag.is-done-sm {
+    font-size: 0.68rem;
+}
+
+.state-tag.is-pending-sm { color: var(--amber); }
+.state-tag.is-done-sm { color: #a89f8d; }
+
+.champ-events-panels {
+    min-width: 0;
+}
+
+.champ-event-panel {
+    display: none;
+}
+
+.champ-event-panel.is-active {
+    display: block;
+    animation: hero-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.champ-event-empty {
+    padding: 40px 24px;
+    text-align: center;
+}
+
+.champ-event-empty p {
+    color: var(--text-on-charcoal-dim);
+    font-size: 0.92rem;
+    margin: 0;
+    max-width: 46ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 960px) {
+    .champ-detail-body { grid-template-columns: 1fr; }
+    .champ-events-nav {
+        position: static;
+        flex-direction: row;
+        overflow-x: auto;
+        border-top: none;
+        border-bottom: 2px solid var(--ink);
+        gap: 4px;
+        padding-bottom: 4px;
+    }
+    .champ-events-label { display: none; }
+    .champ-event-link {
+        border-bottom: none;
+        white-space: nowrap;
+        padding: 10px 14px;
+        border: 1px solid var(--paper-line);
+    }
+    .champ-event-link.is-active { border-color: var(--red-ink); background: var(--paper-2); }
+}
+
+@media (max-width: 720px) {
+    .champ-detail-header { padding: 32px 20px; }
+    .champ-detail-body { padding: 32px 20px 64px; gap: 24px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
