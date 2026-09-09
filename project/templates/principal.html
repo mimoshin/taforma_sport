@@ -32,7 +32,6 @@
 
             <div class="masthead-actions">
                 <a href="#" class="btn btn-ghost">Iniciar sesión</a>
-                <a href="#contacto" class="btn btn-primary">Solicitar demo</a>
                 <button class="menu-toggle" aria-label="Abrir menú"><span></span></button>
             </div>
         </div>
@@ -40,85 +39,330 @@
 
     <section class="hero">
         <div class="hero-inner">
-            <div class="hero-head">
-                <div>
-                    <h1>El acta oficial de tu competencia, <em>generada en vivo</em></h1>
-                    <p class="lead">
-                        Taforma organiza inscripciones, series y horarios de tu competencia de atletismo, y publica
-                        marcas y clasificaciones oficiales a medida que ocurren. Sin planillas, sin doble carga,
-                        sin resultados que llegan tarde.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#contacto" class="btn btn-primary btn-lg">Solicitar una demo</a>
-                        <a href="#como-funciona" class="btn btn-ghost btn-lg">Ver cómo funciona</a>
+            <div class="hero-carousel" id="heroCarousel">
+
+                <div class="hero-slide is-active" data-slide="0">
+                    <div class="hero-head">
+                        <div>
+                            <h1>El acta oficial de tu competencia, <em>generada en vivo</em></h1>
+                            <p class="lead">
+                                Taforma organiza inscripciones, series y horarios de tu competencia de atletismo, y publica
+                                marcas y clasificaciones oficiales a medida que ocurren. Sin planillas, sin doble carga,
+                                sin resultados que llegan tarde.
+                            </p>
+                        </div>
+
+                        <div class="hero-proof">
+                            <div class="stat">
+                                <span>Federaciones y clubes ya organizan sus competencias con Taforma</span>
+                            </div>
+                            <div class="stat">
+                                <span>Motor de reglamento específico para atletismo</span>
+                                <b>Pista · Campo · Ruta</b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bulletin" role="group" aria-label="Ejemplo de acta de resultados en vivo generada por Taforma">
+                        <div class="bulletin-head">
+                            <div class="bulletin-event">
+                                100 m Planos — Final
+                                <small>Campeonato Nacional Sub-20 · Serie 1</small>
+                            </div>
+                            <span class="live-tag"><span class="dot"></span> En vivo</span>
+                        </div>
+                        <div class="bulletin-meta">
+                            <span>Viento <b>+1.2 m/s</b></span>
+                            <span>Calles <b>1–8</b></span>
+                            <span>Hora <b>16:42</b></span>
+                        </div>
+                        <table class="bulletin">
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Atleta</th>
+                                    <th>País</th>
+                                    <th>Marca</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="pos-num first">1</span></td>
+                                    <td><span class="athlete-name">M. Fernández</span><span class="record-tag">MP</span></td>
+                                    <td>CHI</td>
+                                    <td class="mark-time">10.42</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">2</span></td>
+                                    <td><span class="athlete-name">J. Herrera</span></td>
+                                    <td>ARG</td>
+                                    <td class="mark-time">10.51</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">3</span></td>
+                                    <td><span class="athlete-name">L. Rojas</span></td>
+                                    <td>PER</td>
+                                    <td class="mark-time">10.58</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">4</span></td>
+                                    <td><span class="athlete-name">D. Soto</span></td>
+                                    <td>CHI</td>
+                                    <td class="mark-time">10.63</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
+                        <div class="bulletin-foot">
+                            <span>Generado automáticamente por Taforma</span>
+                            <span class="stamp">Oficial</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="hero-proof">
-                    <div class="stat">
-                        <span>Federaciones y clubes ya organizan sus competencias con Taforma</span>
-                    </div>
-                    <div class="stat">
-                        <span>Motor de reglamento específico para atletismo</span>
-                        <b>Pista · Campo · Ruta</b>
-                    </div>
-                </div>
-            </div>
+                <div class="hero-slide" data-slide="1">
+                    <div class="hero-head">
+                        <div>
+                            <h1>Organiza tus torneos y <em>mantén el control</em></h1>
+                            <p class="lead">
+                                Crea competencias, abre inscripciones y define categorías desde un solo lugar.
+                                Taforma centraliza clubes, atletas, cupos y documentación, sin planillas dispersas
+                                ni versiones desactualizadas entre tu equipo.
+                            </p>
+                        </div>
 
-            <div class="bulletin" role="group" aria-label="Ejemplo de acta de resultados en vivo generada por Taforma">
-                <div class="bulletin-head">
-                    <div class="bulletin-event">
-                        100 m Planos — Final
-                        <small>Campeonato Nacional Sub-20 · Serie 1</small>
+                        <div class="hero-proof">
+                            <div class="stat">
+                                <span>Todo el ciclo de la competencia en un mismo sistema</span>
+                            </div>
+                            <div class="stat">
+                                <span>Control de inscripciones y cupos</span>
+                                <b>Categorías · Clubes · Documentación</b>
+                            </div>
+                        </div>
                     </div>
-                    <span class="live-tag"><span class="dot"></span> En vivo</span>
+
+                    <div class="bulletin" role="group" aria-label="Ejemplo de panel de organización de competencia generado por Taforma">
+                        <div class="bulletin-head">
+                            <div class="bulletin-event">
+                                Campeonato Nacional Sub-20
+                                <small>Panel de organización · Inscripciones</small>
+                            </div>
+                            <span class="live-tag"><span class="dot"></span> Activo</span>
+                        </div>
+                        <div class="bulletin-meta">
+                            <span>Categorías <b>6</b></span>
+                            <span>Clubes <b>22</b></span>
+                            <span>Cierre <b>12 oct</b></span>
+                        </div>
+                        <table class="bulletin">
+                            <thead>
+                                <tr>
+                                    <th>Club</th>
+                                    <th>Categoría</th>
+                                    <th>Inscritos</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="athlete-name">Andes Atletismo</span></td>
+                                    <td>Sub-20</td>
+                                    <td class="mono">18</td>
+                                    <td><span class="state-tag is-ok">Validado</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="athlete-name">Club Cordillera</span></td>
+                                    <td>Sub-20</td>
+                                    <td class="mono">14</td>
+                                    <td><span class="state-tag is-ok">Validado</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="athlete-name">Deportivo Litoral</span></td>
+                                    <td>Sub-18</td>
+                                    <td class="mono">21</td>
+                                    <td><span class="state-tag is-pending">Pendiente</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="athlete-name">Atlético del Valle</span></td>
+                                    <td>Sub-18</td>
+                                    <td class="mono">9</td>
+                                    <td><span class="state-tag is-pending">Pendiente</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bulletin-note">Panel de ejemplo con fines ilustrativos.</div>
+                        <div class="bulletin-foot">
+                            <span>Generado automáticamente por Taforma</span>
+                            <span class="stamp">Oficial</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bulletin-meta">
-                    <span>Viento <b>+1.2 m/s</b></span>
-                    <span>Calles <b>1–8</b></span>
-                    <span>Hora <b>16:42</b></span>
+
+                <div class="hero-slide" data-slide="2">
+                    <div class="hero-head">
+                        <div>
+                            <h1>Resultados publicados <em>al instante</em></h1>
+                            <p class="lead">
+                                Carga marcas en pista o campo y Taforma publica clasificaciones en tiempo real
+                                para atletas, entrenadores y público, sin retrasos ni versiones impresas que
+                                quedan obsoletas antes de terminar la jornada.
+                            </p>
+                        </div>
+
+                        <div class="hero-proof">
+                            <div class="stat">
+                                <span>Publicación en vivo desde el ingreso de la marca</span>
+                            </div>
+                            <div class="stat">
+                                <span>Carga manual o por cronometraje electrónico</span>
+                                <b>Validación · Detección de récords</b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bulletin" role="group" aria-label="Ejemplo de acta de resultados en vivo generada por Taforma">
+                        <div class="bulletin-head">
+                            <div class="bulletin-event">
+                                400 m Vallas — Final
+                                <small>Campeonato Nacional Sub-20 · Serie 1</small>
+                            </div>
+                            <span class="live-tag"><span class="dot"></span> En vivo</span>
+                        </div>
+                        <div class="bulletin-meta">
+                            <span>Viento <b>+0.4 m/s</b></span>
+                            <span>Calles <b>1–8</b></span>
+                            <span>Hora <b>18:05</b></span>
+                        </div>
+                        <table class="bulletin">
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Atleta</th>
+                                    <th>País</th>
+                                    <th>Marca</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="pos-num first">1</span></td>
+                                    <td><span class="athlete-name">V. Aránguiz</span><span class="record-tag">MP</span></td>
+                                    <td>CHI</td>
+                                    <td class="mark-time">52.14</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">2</span></td>
+                                    <td><span class="athlete-name">T. Molina</span></td>
+                                    <td>ARG</td>
+                                    <td class="mark-time">52.61</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">3</span></td>
+                                    <td><span class="athlete-name">B. Osorio</span></td>
+                                    <td>PER</td>
+                                    <td class="mark-time">53.02</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">4</span></td>
+                                    <td><span class="athlete-name">E. Pizarro</span></td>
+                                    <td>CHI</td>
+                                    <td class="mark-time">53.35</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
+                        <div class="bulletin-foot">
+                            <span>Generado automáticamente por Taforma</span>
+                            <span class="stamp">Oficial</span>
+                        </div>
+                    </div>
                 </div>
-                <table class="bulletin">
-                    <thead>
-                        <tr>
-                            <th>Pos</th>
-                            <th>Atleta</th>
-                            <th>País</th>
-                            <th>Marca</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><span class="pos-num first">1</span></td>
-                            <td><span class="athlete-name">M. Fernández</span><span class="record-tag">MP</span></td>
-                            <td>CHI</td>
-                            <td class="mark-time">10.42</td>
-                        </tr>
-                        <tr>
-                            <td><span class="pos-num">2</span></td>
-                            <td><span class="athlete-name">J. Herrera</span></td>
-                            <td>ARG</td>
-                            <td class="mark-time">10.51</td>
-                        </tr>
-                        <tr>
-                            <td><span class="pos-num">3</span></td>
-                            <td><span class="athlete-name">L. Rojas</span></td>
-                            <td>PER</td>
-                            <td class="mark-time">10.58</td>
-                        </tr>
-                        <tr>
-                            <td><span class="pos-num">4</span></td>
-                            <td><span class="athlete-name">D. Soto</span></td>
-                            <td>CHI</td>
-                            <td class="mark-time">10.63</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
-                <div class="bulletin-foot">
-                    <span>Generado automáticamente por Taforma</span>
-                    <span class="stamp">Oficial</span>
+
+                <div class="hero-slide" data-slide="3">
+                    <div class="hero-head">
+                        <div>
+                            <h1>Rankings que <em>quedan registrados</em></h1>
+                            <p class="lead">
+                                Cada marca cargada alimenta el histórico de tu federación o club: mejores tiempos
+                                por atleta, tablas por categoría y seguimiento de récords nacionales y de
+                                campeonato, siempre actualizados y listos para consultar.
+                            </p>
+                        </div>
+
+                        <div class="hero-proof">
+                            <div class="stat">
+                                <span>Histórico de marcas por atleta y por club</span>
+                            </div>
+                            <div class="stat">
+                                <span>Seguimiento de récords</span>
+                                <b>Nacional · Campeonato · Personal</b>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bulletin" role="group" aria-label="Ejemplo de ranking generado por Taforma">
+                        <div class="bulletin-head">
+                            <div class="bulletin-event">
+                                Ranking 100 m Planos
+                                <small>Temporada 2026 · Categoría Sub-20</small>
+                            </div>
+                            <span class="live-tag"><span class="dot"></span> Actualizado</span>
+                        </div>
+                        <div class="bulletin-meta">
+                            <span>Marcas <b>146</b></span>
+                            <span>Atletas <b>68</b></span>
+                            <span>Corte <b>1 sep</b></span>
+                        </div>
+                        <table class="bulletin">
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Atleta</th>
+                                    <th>País</th>
+                                    <th>Marca</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="pos-num first">1</span></td>
+                                    <td><span class="athlete-name">M. Fernández</span><span class="record-tag">RN</span></td>
+                                    <td>CHI</td>
+                                    <td class="mark-time">10.31</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">2</span></td>
+                                    <td><span class="athlete-name">J. Herrera</span></td>
+                                    <td>ARG</td>
+                                    <td class="mark-time">10.42</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">3</span></td>
+                                    <td><span class="athlete-name">L. Rojas</span></td>
+                                    <td>PER</td>
+                                    <td class="mark-time">10.49</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pos-num">4</span></td>
+                                    <td><span class="athlete-name">D. Soto</span></td>
+                                    <td>CHI</td>
+                                    <td class="mark-time">10.55</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="bulletin-note">RN = Récord nacional. Datos de ejemplo con fines ilustrativos.</div>
+                        <div class="bulletin-foot">
+                            <span>Generado automáticamente por Taforma</span>
+                            <span class="stamp">Oficial</span>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="hero-carousel-controls">
+                    <button type="button" class="carousel-arrow" data-dir="-1" aria-label="Vista anterior">‹</button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <button type="button" class="carousel-arrow" data-dir="1" aria-label="Vista siguiente">›</button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -131,35 +375,37 @@
 
         <div class="modules">
             <div class="module-row">
-                <span class="m-id">INSC</span>
+                <span class="m-id"></span>
                 <h3>Inscripciones online</h3>
                 <p>Clubes y atletas se inscriben por categoría y prueba, con validación de edad, cupos y documentación.</p>
             </div>
             <div class="module-row">
-                <span class="m-id">SER</span>
+                <span class="m-id"></span>
                 <h3>Series y baterías</h3>
                 <p>Genera automáticamente series, calles y horarios según reglamento, marcas de clasificación y aforo de pista.</p>
             </div>
             <div class="module-row">
-                <span class="m-id">RES</span>
+                <span class="m-id"></span>
                 <h3>Carga de resultados</h3>
                 <p>Ingreso manual o por cronometraje electrónico, con validación de marcas y detección de récords.</p>
             </div>
             <div class="module-row">
-                <span class="m-id">VIVO</span>
+                <span class="m-id"></span>
                 <h3>Resultados en vivo</h3>
                 <p>Publica resultados y clasificaciones en tiempo real para atletas, entrenadores y público.</p>
             </div>
             <div class="module-row">
-                <span class="m-id">RANK</span>
+                <span class="m-id"></span>
                 <h3>Rankings y récords</h3>
                 <p>Tablas de mejores marcas, históricos por atleta o club y seguimiento de récords nacionales o de campeonato.</p>
             </div>
+            {% comment %}
             <div class="module-row">
-                <span class="m-id">ACTA</span>
+                <span class="m-id"></span>
                 <h3>Actas y reportes</h3>
                 <p>Genera actas oficiales, diplomas y reportes exportables listos para firma y publicación.</p>
             </div>
+            {% endcomment %}
         </div>
     </section>
 
@@ -171,42 +417,42 @@
             </div>
             <div class="disc-index">
                 <div class="disc-row">
-                    <span class="d-num">PST</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Velocidad</span>
                     <span class="d-events">60m – 400m</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">PST</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Medio fondo y fondo</span>
                     <span class="d-events">800m – 10.000m</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">PST</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Vallas y obstáculos</span>
                     <span class="d-events">100m – 3000m SC</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">PST</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Relevos</span>
                     <span class="d-events">4×100m – 4×400m</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">CPO</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Saltos</span>
                     <span class="d-events">Largo · Triple · Alto · Garrocha</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">CPO</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Lanzamientos</span>
                     <span class="d-events">Bala · Disco · Jabalina · Martillo</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">RTA</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Marcha y ruta</span>
                     <span class="d-events">10km – 50km</span>
                 </div>
                 <div class="disc-row">
-                    <span class="d-num">COMB</span>
+                    <span class="d-num"></span>
                     <span class="d-name">Pruebas combinadas</span>
                     <span class="d-events">Heptatlón · Decatlón</span>
                 </div>
@@ -260,7 +506,6 @@
             </div>
             <div class="hero-cta">
                 <a href="mailto:contacto@taforma.app" class="btn btn-primary btn-lg">Solicitar demo</a>
-                <a href="#modulos" class="btn btn-ghost btn-lg">Ver módulos</a>
             </div>
         </div>
     </section>
@@ -280,7 +525,7 @@
                     <span class="wordmark">Taforma</span>
                 </a>
                 <p style="color: #6b6353; font-size: 0.9rem; max-width: 280px;">
-                    Plataforma de gestión de competencias de atletismo. Antes SportResult.
+                    Plataforma de gestión de competencias de atletismo.
                 </p>
             </div>
             <div>
@@ -309,11 +554,63 @@
         </div>
         <div class="footer-bottom">
             <span>© 2026 Taforma. Todos los derechos reservados.</span>
-            <span>Anteriormente SportResult</span>
         </div>
     </footer>
 
     <script>
+        function initHeroCarousel() {
+            const carousel = document.getElementById('heroCarousel');
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll('.hero-slide'));
+            const dotsRow = document.getElementById('carouselDots');
+            const AUTO_ADVANCE_MS = 7000;
+            let current = slides.findIndex((s) => s.classList.contains('is-active'));
+            if (current < 0) current = 0;
+            let timer = null;
+
+            dotsRow.innerHTML = slides.map((_, i) => `
+                <button type="button" class="carousel-dot${i === current ? ' is-active' : ''}" data-index="${i}" aria-label="Ver vista ${i + 1}"></button>
+            `).join('');
+            const dots = Array.from(dotsRow.querySelectorAll('.carousel-dot'));
+
+            function goTo(index) {
+                current = (index + slides.length) % slides.length;
+                slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+                dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+            }
+
+            function startAuto() {
+                stopAuto();
+                timer = setInterval(() => goTo(current + 1), AUTO_ADVANCE_MS);
+            }
+
+            function stopAuto() {
+                if (timer) clearInterval(timer);
+            }
+
+            carousel.querySelectorAll('.carousel-arrow').forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    goTo(current + parseInt(btn.dataset.dir, 10));
+                    startAuto();
+                });
+            });
+
+            dots.forEach((dot) => {
+                dot.addEventListener('click', () => {
+                    goTo(parseInt(dot.dataset.index, 10));
+                    startAuto();
+                });
+            });
+
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
+
+            startAuto();
+        }
+
+        initHeroCarousel();
+
         const PALETTES = [
             { id: 'pista-roja', name: 'Pista Roja', desc: 'Tartán · energía de pista' },
             { id: 'nocturna-estadio', name: 'Nocturna de Estadio', desc: 'Luces · transmisión en vivo' },
