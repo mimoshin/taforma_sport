@@ -1,0 +1,16 @@
+:root[data-palette="photo-finish"],
+[data-palette="photo-finish"] {
+    --ink: #0a0a0a;
+    --paper: #ffffff;
+    --paper-2: #f0f0f0;
+    --paper-line: #d4d4d4;
+    --charcoal: #0a0a0a;
+    --charcoal-2: #161616;
+    --text-on-charcoal: #ffffff;
+    --text-on-charcoal-dim: #a3a3a3;
+    --red: #ff2d20;
+    --red-ink: #d61f14;
+    --green: #00d68f;
+    --green-text: #eafff0;
+    --amber: #ffb800;
+}

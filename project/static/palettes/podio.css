@@ -1,0 +1,16 @@
+:root[data-palette="podio"],
+[data-palette="podio"] {
+    --ink: #1c1206;
+    --paper: #fdf9f0;
+    --paper-2: #f6ecd6;
+    --paper-line: #e8d8b0;
+    --charcoal: #1c1206;
+    --charcoal-2: #26190a;
+    --text-on-charcoal: #fdf9f0;
+    --text-on-charcoal-dim: #c9b78d;
+    --red: #c9302c;
+    --red-ink: #a12622;
+    --green: #3d8b5f;
+    --green-text: #eafff0;
+    --amber: #d4a017;
+}

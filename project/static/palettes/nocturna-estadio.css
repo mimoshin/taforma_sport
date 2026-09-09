@@ -1,0 +1,16 @@
+:root[data-palette="nocturna-estadio"],
+[data-palette="nocturna-estadio"] {
+    --ink: #0e1420;
+    --paper: #f5f7fb;
+    --paper-2: #e9edf5;
+    --paper-line: #cdd6e5;
+    --charcoal: #0a1220;
+    --charcoal-2: #101a2c;
+    --text-on-charcoal: #f5f7fb;
+    --text-on-charcoal-dim: #8fa0bf;
+    --red: #e8402f;
+    --red-ink: #c22e1f;
+    --green: #22c55e;
+    --green-text: #eafff0;
+    --amber: #fbbf24;
+}

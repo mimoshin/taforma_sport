@@ -1,0 +1,16 @@
+:root[data-palette="pista-roja"],
+[data-palette="pista-roja"] {
+    --ink: #1c120c;
+    --paper: #fff8f3;
+    --paper-2: #fbeee2;
+    --paper-line: #ecd6c2;
+    --charcoal: #1a0f0a;
+    --charcoal-2: #241610;
+    --text-on-charcoal: #fff8f3;
+    --text-on-charcoal-dim: #c9a891;
+    --red: #e8451c;
+    --red-ink: #c2360f;
+    --green: #3ba35c;
+    --green-text: #eafff0;
+    --amber: #f0a020;
+}
