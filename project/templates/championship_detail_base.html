@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block nav_links %}
+<a href="{% url 'calendar' %}">Calendario</a>
+<a href="{% url 'championships' %}">Campeonatos</a>
+<a href="{% url 'ranking' %}">Ranking</a>
+<a href="{% url 'principal' %}#contacto">Contacto</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="champ-detail-header">
+        <div class="champ-detail-inner">
+            <a href="{% url 'championships' %}" class="champ-back">‹ Campeonatos</a>
+            <div class="champ-detail-top">
+                <h1>Campeonato Nacional Sub-20</h1>
+                <span class="live-tag"><span class="dot"></span> En vivo</span>
+            </div>
+            <div class="champ-detail-meta">
+                <span>Santiago, CHI</span>
+                <span>12–14 SEP 2026</span>
+                <span><b>8</b> categorías</span>
+                <span><b>412</b> atletas inscritos</span>
+            </div>
+            <div class="champ-modules">
+                <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                <span class="champ-mod is-live">Resultados en vivo</span>
+            </div>
+
+            <div class="champ-page-tabs">
+                <a href="{% url 'championship_detail' slug=slug %}" class="champ-page-tab{% if active_tab == 'horario' %} is-active{% endif %}">Horario del torneo</a>
+                <a href="{% url 'championship_results' slug=slug %}" class="champ-page-tab{% if active_tab == 'resultados' %} is-active{% endif %}">Resultados</a>
+                <a href="{% url 'championship_scores' slug=slug %}" class="champ-page-tab{% if active_tab == 'puntajes' %} is-active{% endif %}">Puntajes</a>
+            </div>
+        </div>
+    </div>
+
+    {% block champ_content %}{% endblock %}
+
+{% endblock %}

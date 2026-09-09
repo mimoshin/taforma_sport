@@ -1,0 +1,43 @@
+{% extends 'auth_base.html' %}
+
+{% block title %}Taforma | Crear cuenta{% endblock %}
+{% block meta_description %}Crea tu cuenta en Taforma para organizar campeonatos, gestionar inscripciones y publicar resultados oficiales.{% endblock %}
+
+{% block auth_title %}Crear cuenta{% endblock %}
+{% block auth_subtitle %}Regístrate para empezar a organizar tus campeonatos.{% endblock %}
+
+{% block auth_form %}
+    <form class="auth-form" method="post" action="#">
+        <div class="auth-field">
+            <label for="registerName">Nombre completo</label>
+            <input type="text" id="registerName" name="name" placeholder="Nombre y apellido" required autocomplete="name">
+        </div>
+
+        <div class="auth-field">
+            <label for="registerEmail">Correo electrónico</label>
+            <input type="email" id="registerEmail" name="email" placeholder="tu@correo.com" required autocomplete="email">
+        </div>
+
+        <div class="auth-field">
+            <label for="registerPassword">Contraseña</label>
+            <input type="password" id="registerPassword" name="password" placeholder="••••••••" required autocomplete="new-password">
+        </div>
+
+        <div class="auth-field">
+            <label for="registerPasswordConfirm">Confirmar contraseña</label>
+            <input type="password" id="registerPasswordConfirm" name="password_confirm" placeholder="••••••••" required autocomplete="new-password">
+        </div>
+
+        <label class="auth-checkbox">
+            <input type="checkbox" name="terms" required>
+            <span>Acepto los <a href="#">términos de servicio</a> y la <a href="#">política de privacidad</a></span>
+        </label>
+
+        <button type="submit" class="btn btn-primary auth-submit">Crear cuenta</button>
+    </form>
+{% endblock %}
+
+{% block auth_switch %}
+    <span>¿Ya tienes cuenta?</span>
+    <a href="{% url 'login' %}">Inicia sesión</a>
+{% endblock %}

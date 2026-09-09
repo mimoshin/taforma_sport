@@ -1,0 +1,171 @@
+{% extends 'championship_detail_base.html' %}
+
+{% block title %}Taforma | Campeonato Nacional Sub-20 — Horario{% endblock %}
+{% block meta_description %}Horario oficial del Campeonato Nacional Sub-20, organizado con Taforma: pruebas en orden cronológico.{% endblock %}
+
+{% block champ_content %}
+
+    <div class="champ-page-view--schedule">
+        <div class="bulletin">
+            <div class="bulletin-head">
+                <div class="bulletin-event">
+                    Horario del torneo
+                </div>
+            </div>
+            <table class="bulletin schedule-table">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Prueba</th>
+                        <th></th>
+                        <th>Categoria</th>
+                        <th>Genero</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                          <td class="mark-time">15:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='garrocha' %}" class="athlete-name schedule-event-link">Salto con Garrocha</a></td>
+                          <td></td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">15:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='100mv' %}" class="athlete-name schedule-event-link">100 Metros Vallas</a></td>
+                          <td>Tetratlón (Técnico)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">15:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='bala' %}" class="athlete-name schedule-event-link">Lanzamiento Bala</a></td>
+                          <td>Tetratlón (Lanzamientos)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">15:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='jabalina' %}" class="athlete-name schedule-event-link">Lanzamiento Jabalina</a></td>
+                          <td>Tetratlón (Lanzamientos)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">15:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='100mv' %}" class="athlete-name schedule-event-link">100 Metros Vallas</a></td>
+                          <td>Tetratlón (Saltos)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">16:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='100mv' %}" class="athlete-name schedule-event-link">100 Metros Vallas</a></td>
+                          <td>Tetratlón (Técnico)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">16:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='salto-largo' %}" class="athlete-name schedule-event-link">Salto Largo</a></td>
+                          <td>Tetratlón (Saltos)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">16:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='salto-alto' %}" class="athlete-name schedule-event-link">Salto Alto</a></td>
+                          <td>Tetratlón (Técnico)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">16:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='jabalina' %}" class="athlete-name schedule-event-link">Lanzamiento Jabalina</a></td>
+                          <td>Tetratlón (Lanzamientos)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">16:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='100mv' %}" class="athlete-name schedule-event-link">100 Metros Vallas</a></td>
+                          <td>Tetratlón (Saltos)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">16:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='bala' %}" class="athlete-name schedule-event-link">Lanzamiento Bala</a></td>
+                          <td>Tetratlón (Lanzamientos)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">17:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='100mp' %}" class="athlete-name schedule-event-link">100 Metros Planos</a></td>
+                          <td>Tetratlón (Velocidad)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">17:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='garrocha' %}" class="athlete-name schedule-event-link">Salto con Garrocha</a></td>
+                          <td></td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">17:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='100mp' %}" class="athlete-name schedule-event-link">100 Metros Planos</a></td>
+                          <td>Tetratlón (Velocidad)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='martillo' %}" class="athlete-name schedule-event-link">Lanzamiento Martillo</a></td>
+                          <td></td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='2000m' %}" class="athlete-name schedule-event-link">2.000 Metros Planos</a></td>
+                          <td>Series C/T</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='bala' %}" class="athlete-name schedule-event-link">Lanzamiento Bala</a></td>
+                          <td>Tetratlón (Velocidad)</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='salto-largo' %}" class="athlete-name schedule-event-link">Salto Largo</a></td>
+                          <td>Tetratlón (Saltos)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='salto-alto' %}" class="athlete-name schedule-event-link">Salto Alto</a></td>
+                          <td>Tetratlón (Técnico)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='2000m' %}" class="athlete-name schedule-event-link">2.000 Metros Planos</a></td>
+                          <td>Series C/T</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr><tr>
+                          <td class="mark-time">18:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='bala' %}" class="athlete-name schedule-event-link">Lanzamiento Bala</a></td>
+                          <td>Tetratlón (Velocidad)</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">19:00</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='300mv' %}" class="athlete-name schedule-event-link">300 Metros Vallas</a></td>
+                          <td>Series C/T</td>
+                          <td>U16</td>
+                          <td>Mujeres</td>
+                        </tr><tr>
+                          <td class="mark-time">19:30</td>
+                          <td><a href="{% url 'championship_event_results' slug=slug event_slug='300mv' %}" class="athlete-name schedule-event-link">300 Metros Vallas</a></td>
+                          <td>Series C/T</td>
+                          <td>U16</td>
+                          <td>Hombres</td>
+                        </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

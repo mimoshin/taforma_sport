@@ -28,13 +28,13 @@
                 {% block nav_links %}
                 <a href="{% url 'calendar' %}">Calendario</a>
                 <a href="{% url 'championships' %}">Campeonatos</a>
-                <a href="#como-funciona">Ranking</a>
+                <a href="{% url 'ranking' %}">Ranking</a>
                 <a href="#contacto">Contacto</a>
                 {% endblock %}
             </nav>
 
             <div class="masthead-actions">
-                <a href="#" class="btn btn-ghost">Iniciar sesión</a>
+                <a href="{% url 'login' %}" class="btn btn-ghost">Iniciar sesión</a>
                 <button class="menu-toggle" aria-label="Abrir menú"><span></span></button>
             </div>
         </div>

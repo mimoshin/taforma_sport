@@ -1,0 +1,142 @@
+{% extends 'championship_detail_base.html' %}
+
+{% block title %}Taforma | Campeonato Nacional Sub-20 — Resultados{% endblock %}
+{% block meta_description %}Resultados oficiales del Campeonato Nacional Sub-20, organizado con Taforma: series, marcas y clasificaciones por prueba.{% endblock %}
+
+{% block champ_content %}
+
+    <div class="champ-results-layout">
+        <form class="champ-search-bar" id="champSearchBar" role="search">
+            <input type="search" class="champ-search-input" id="champSearchInput" placeholder="Buscar atleta por nombre…" aria-label="Buscar atleta por nombre">
+
+            <select class="champ-search-select" id="champGenderFilter" aria-label="Filtrar por género">
+                <option value="todos">Género: todos</option>
+                <option value="hombres">Hombres</option>
+                <option value="mujeres">Mujeres</option>
+            </select>
+
+            <select class="champ-search-select" id="champDisciplineFilter" aria-label="Filtrar por disciplina">
+                <option value="todas">Disciplina: todas</option>
+                <option value="pista">Pista</option>
+                <option value="lanzamiento">Lanzamiento</option>
+                <option value="saltos">Saltos</option>
+            </select>
+        </form>
+
+        <div class="champ-results-grid" id="champResultsGrid">
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='garrocha' %}" class="champ-event-card" data-genero="ambos" data-disciplina="saltos">
+                <div class="champ-event-card-top">
+                    <h3>Salto con Garrocha</h3>
+                    <span class="state-tag is-pending-sm">15:00</span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='100mv' %}" class="champ-event-card" data-genero="ambos" data-disciplina="pista">
+                <div class="champ-event-card-top">
+                    <h3>100 m Vallas</h3>
+                    <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Tetratlón</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='bala' %}" class="champ-event-card" data-genero="ambos" data-disciplina="lanzamiento">
+                <div class="champ-event-card-top">
+                    <h3>Lanzamiento Bala</h3>
+                    <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Tetratlón</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='jabalina' %}" class="champ-event-card" data-genero="ambos" data-disciplina="lanzamiento">
+                <div class="champ-event-card-top">
+                    <h3>Lanzamiento Jabalina</h3>
+                    <span class="state-tag is-done-sm">Final</span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Tetratlón (Lanzamientos)</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='salto-largo' %}" class="champ-event-card" data-genero="ambos" data-disciplina="saltos">
+                <div class="champ-event-card-top">
+                    <h3>Salto Largo</h3>
+                    <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Tetratlón (Saltos)</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='salto-alto' %}" class="champ-event-card" data-genero="ambos" data-disciplina="saltos">
+                <div class="champ-event-card-top">
+                    <h3>Salto Alto</h3>
+                    <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Tetratlón (Técnico)</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='100mp' %}" class="champ-event-card" data-genero="ambos" data-disciplina="pista">
+                <div class="champ-event-card-top">
+                    <h3>100 m Planos</h3>
+                    <span class="state-tag is-pending-sm">17:00</span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Tetratlón (Velocidad)</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='martillo' %}" class="champ-event-card" data-genero="hombres" data-disciplina="lanzamiento">
+                <div class="champ-event-card-top">
+                    <h3>Lanzamiento Martillo</h3>
+                    <span class="state-tag is-pending-sm">18:00</span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='2000m' %}" class="champ-event-card" data-genero="ambos" data-disciplina="pista">
+                <div class="champ-event-card-top">
+                    <h3>2.000 m Planos</h3>
+                    <span class="state-tag is-pending-sm">18:00</span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Series C/T</div>
+            </a>
+
+            <a href="{% url 'championship_event_results' slug=slug event_slug='300mv' %}" class="champ-event-card" data-genero="ambos" data-disciplina="pista">
+                <div class="champ-event-card-top">
+                    <h3>300 m Vallas</h3>
+                    <span class="state-tag is-pending-sm">19:00</span>
+                </div>
+                <div class="champ-event-card-meta">Categoría U16 · Series C/T</div>
+            </a>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        function initChampionshipResultsFilters() {
+            const searchForm = document.getElementById('champSearchBar');
+            const genderFilter = document.getElementById('champGenderFilter');
+            const disciplineFilter = document.getElementById('champDisciplineFilter');
+            const grid = document.getElementById('champResultsGrid');
+            if (!searchForm || !genderFilter || !disciplineFilter || !grid) return;
+
+            const cards = Array.from(grid.querySelectorAll('.champ-event-card'));
+
+            function applyFilters() {
+                const gender = genderFilter.value;
+                const discipline = disciplineFilter.value;
+
+                cards.forEach((card) => {
+                    const matchesGender = gender === 'todos' || card.dataset.genero === 'ambos' || card.dataset.genero === gender;
+                    const matchesDiscipline = discipline === 'todas' || card.dataset.disciplina === discipline;
+                    card.style.display = (matchesGender && matchesDiscipline) ? '' : 'none';
+                });
+            }
+
+            searchForm.addEventListener('submit', (e) => e.preventDefault());
+            genderFilter.addEventListener('change', applyFilters);
+            disciplineFilter.addEventListener('change', applyFilters);
+        }
+
+        initChampionshipResultsFilters();
+    </script>
+{% endblock %}

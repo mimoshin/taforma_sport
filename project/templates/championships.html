@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Taforma | Campeonatos{% endblock %}
 {% block meta_description %}Explora los campeonatos organizados con Taforma: inscripciones, series, resultados en vivo y rankings de cada competencia.{% endblock %}
@@ -6,7 +7,7 @@
 {% block nav_links %}
 <a href="{% url 'calendar' %}">Calendario</a>
 <a href="{% url 'championships' %}">Campeonatos</a>
-<a href="{% url 'principal' %}#como-funciona">Ranking</a>
+<a href="{% url 'ranking' %}">Ranking</a>
 <a href="{% url 'principal' %}#contacto">Contacto</a>
 {% endblock %}
 
@@ -37,128 +38,149 @@
     <div class="champ-list" id="champList">
 
         <a href="{% url 'championship_detail' slug='nacional-sub-20' %}" class="champ-row" data-disciplina="atletismo" data-estado="en-vivo">
-            <div class="champ-row-top">
-                <h3>Campeonato Nacional Sub-20</h3>
-                <span class="live-tag"><span class="dot"></span> En vivo</span>
-            </div>
-            <div class="champ-row-meta">
-                <span>Santiago, CHI</span>
-                <span>12–14 SEP 2026</span>
-                <span><b>8</b> categorías</span>
-                <span><b>412</b> atletas inscritos</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-closed">Inscripciones cerradas</span>
-                <span class="champ-mod is-live">Resultados en vivo</span>
-                <span class="champ-mod is-open">Rankings</span>
+            <img class="champ-row-logo" src="{% static 'logos/nacional-sub-20.jpg' %}" alt="" loading="lazy">
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Campeonato Nacional Sub-20</h3>
+                    <span class="live-tag"><span class="dot"></span> En vivo</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Santiago, CHI</span>
+                    <span>12–14 SEP 2026</span>
+                    <span><b>8</b> categorías</span>
+                    <span><b>412</b> atletas inscritos</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                    <span class="champ-mod is-live">Resultados en vivo</span>
+                    <span class="champ-mod is-open">Rankings</span>
+                </div>
             </div>
         </a>
 
         <a href="#" class="champ-row" data-disciplina="ciclismo" data-estado="en-vivo">
-            <div class="champ-row-top">
-                <h3>Vuelta Regional Elite</h3>
-                <span class="live-tag"><span class="dot"></span> En vivo</span>
-            </div>
-            <div class="champ-row-meta">
-                <span>Valparaíso, CHI</span>
-                <span>18–20 SEP 2026</span>
-                <span><b>1</b> categoría</span>
-                <span><b>84</b> corredores inscritos</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-closed">Inscripciones cerradas</span>
-                <span class="champ-mod is-live">Resultados en vivo</span>
-                <span class="champ-mod is-open">Rankings</span>
-            </div>
-        </a>
-
-        <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
-            <div class="champ-row-top">
-                <h3>Copa Metropolitana Sub-18</h3>
-                <span class="state-tag is-pending">Próxima</span>
-            </div>
-            <div class="champ-row-meta">
-                <span>Providencia, CHI</span>
-                <span>27 SEP 2026</span>
-                <span><b>5</b> categorías</span>
-                <span><b>168</b> atletas inscritos</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-open">Inscripciones abiertas</span>
-                <span class="champ-mod is-closed">Resultados</span>
-                <span class="champ-mod is-closed">Rankings</span>
+            <div class="champ-row-logo champ-row-logo--placeholder" aria-hidden="true"></div>
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Vuelta Regional Elite</h3>
+                    <span class="live-tag"><span class="dot"></span> En vivo</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Valparaíso, CHI</span>
+                    <span>18–20 SEP 2026</span>
+                    <span><b>1</b> categoría</span>
+                    <span><b>84</b> corredores inscritos</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                    <span class="champ-mod is-live">Resultados en vivo</span>
+                    <span class="champ-mod is-open">Rankings</span>
+                </div>
             </div>
         </a>
 
         <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
-            <div class="champ-row-top">
-                <h3>Meeting Internacional de Velocidad</h3>
-                <span class="state-tag is-pending">Próxima</span>
+            <div class="champ-row-logo champ-row-logo--placeholder" aria-hidden="true"></div>
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Copa Metropolitana Sub-18</h3>
+                    <span class="state-tag is-pending">Próxima</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Providencia, CHI</span>
+                    <span>27 SEP 2026</span>
+                    <span><b>5</b> categorías</span>
+                    <span><b>168</b> atletas inscritos</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-open">Inscripciones abiertas</span>
+                    <span class="champ-mod is-closed">Resultados</span>
+                    <span class="champ-mod is-closed">Rankings</span>
+                </div>
             </div>
-            <div class="champ-row-meta">
-                <span>Antofagasta, CHI</span>
-                <span>4 OCT 2026</span>
-                <span>Invitacional</span>
-                <span><b>56</b> atletas confirmados</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-open">Inscripciones abiertas</span>
-                <span class="champ-mod is-closed">Resultados</span>
-                <span class="champ-mod is-closed">Rankings</span>
+        </a>
+
+        <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
+            <img class="champ-row-logo" src="{% static 'logos/meeting-internacional-velocidad.png' %}" alt="" loading="lazy">
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Meeting Internacional de Velocidad</h3>
+                    <span class="state-tag is-pending">Próxima</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Antofagasta, CHI</span>
+                    <span>4 OCT 2026</span>
+                    <span>Invitacional</span>
+                    <span><b>56</b> atletas confirmados</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-open">Inscripciones abiertas</span>
+                    <span class="champ-mod is-closed">Resultados</span>
+                    <span class="champ-mod is-closed">Rankings</span>
+                </div>
             </div>
         </a>
 
         <a href="#" class="champ-row" data-disciplina="ciclismo" data-estado="inscripciones">
-            <div class="champ-row-top">
-                <h3>Contrarreloj Individual Regional</h3>
-                <span class="state-tag is-pending">Próxima</span>
-            </div>
-            <div class="champ-row-meta">
-                <span>Concepción, CHI</span>
-                <span>11 OCT 2026</span>
-                <span><b>2</b> categorías</span>
-                <span><b>37</b> corredores inscritos</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-open">Inscripciones abiertas</span>
-                <span class="champ-mod is-closed">Resultados</span>
-                <span class="champ-mod is-closed">Rankings</span>
+            <div class="champ-row-logo champ-row-logo--placeholder" aria-hidden="true"></div>
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Contrarreloj Individual Regional</h3>
+                    <span class="state-tag is-pending">Próxima</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Concepción, CHI</span>
+                    <span>11 OCT 2026</span>
+                    <span><b>2</b> categorías</span>
+                    <span><b>37</b> corredores inscritos</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-open">Inscripciones abiertas</span>
+                    <span class="champ-mod is-closed">Resultados</span>
+                    <span class="champ-mod is-closed">Rankings</span>
+                </div>
             </div>
         </a>
 
         <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="inscripciones">
-            <div class="champ-row-top">
-                <h3>Campeonato de Pruebas Combinadas</h3>
-                <span class="state-tag is-pending">Próxima</span>
-            </div>
-            <div class="champ-row-meta">
-                <span>Rancagua, CHI</span>
-                <span>18 OCT 2026</span>
-                <span><b>2</b> categorías</span>
-                <span><b>29</b> atletas inscritos</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-open">Inscripciones abiertas</span>
-                <span class="champ-mod is-closed">Resultados</span>
-                <span class="champ-mod is-closed">Rankings</span>
+            <div class="champ-row-logo champ-row-logo--placeholder" aria-hidden="true"></div>
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Campeonato de Pruebas Combinadas</h3>
+                    <span class="state-tag is-pending">Próxima</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Rancagua, CHI</span>
+                    <span>18 OCT 2026</span>
+                    <span><b>2</b> categorías</span>
+                    <span><b>29</b> atletas inscritos</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-open">Inscripciones abiertas</span>
+                    <span class="champ-mod is-closed">Resultados</span>
+                    <span class="champ-mod is-closed">Rankings</span>
+                </div>
             </div>
         </a>
 
         <a href="#" class="champ-row" data-disciplina="atletismo" data-estado="finalizado">
-            <div class="champ-row-top">
-                <h3>Campeonato Regional Sub-16</h3>
-                <span class="state-tag">Finalizado</span>
-            </div>
-            <div class="champ-row-meta">
-                <span>Talca, CHI</span>
-                <span>8–9 AGO 2026</span>
-                <span><b>6</b> categorías</span>
-                <span><b>203</b> atletas participantes</span>
-            </div>
-            <div class="champ-modules">
-                <span class="champ-mod is-closed">Inscripciones cerradas</span>
-                <span class="champ-mod is-open">Resultados</span>
-                <span class="champ-mod is-open">Rankings</span>
+            <div class="champ-row-logo champ-row-logo--placeholder" aria-hidden="true"></div>
+            <div class="champ-row-body">
+                <div class="champ-row-top">
+                    <h3>Campeonato Regional Sub-16</h3>
+                    <span class="state-tag">Finalizado</span>
+                </div>
+                <div class="champ-row-meta">
+                    <span>Talca, CHI</span>
+                    <span>8–9 AGO 2026</span>
+                    <span><b>6</b> categorías</span>
+                    <span><b>203</b> atletas participantes</span>
+                </div>
+                <div class="champ-modules">
+                    <span class="champ-mod is-closed">Inscripciones cerradas</span>
+                    <span class="champ-mod is-open">Resultados</span>
+                    <span class="champ-mod is-open">Rankings</span>
+                </div>
             </div>
         </a>
 

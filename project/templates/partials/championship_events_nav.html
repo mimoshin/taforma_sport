@@ -1,0 +1,43 @@
+<div class="champ-events-nav" id="champEventsNav">
+    <p class="champ-events-label">Pruebas</p>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='garrocha' %}" class="champ-event-link{% if active_event == 'garrocha' %} is-active{% endif %}">
+        <span>Salto con Garrocha</span>
+        <span class="state-tag is-pending-sm">15:00</span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='100mv' %}" class="champ-event-link{% if active_event == '100mv' %} is-active{% endif %}">
+        <span>100 m Vallas</span>
+        <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='bala' %}" class="champ-event-link{% if active_event == 'bala' %} is-active{% endif %}">
+        <span>Lanzamiento Bala</span>
+        <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='jabalina' %}" class="champ-event-link{% if active_event == 'jabalina' %} is-active{% endif %}">
+        <span>Lanzamiento Jabalina</span>
+        <span class="state-tag is-done-sm">Final</span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='salto-largo' %}" class="champ-event-link{% if active_event == 'salto-largo' %} is-active{% endif %}">
+        <span>Salto Largo</span>
+        <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='salto-alto' %}" class="champ-event-link{% if active_event == 'salto-alto' %} is-active{% endif %}">
+        <span>Salto Alto</span>
+        <span class="live-tag live-tag--sm"><span class="dot"></span></span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='100mp' %}" class="champ-event-link{% if active_event == '100mp' %} is-active{% endif %}">
+        <span>100 m Planos</span>
+        <span class="state-tag is-pending-sm">17:00</span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='martillo' %}" class="champ-event-link{% if active_event == 'martillo' %} is-active{% endif %}">
+        <span>Lanzamiento Martillo</span>
+        <span class="state-tag is-pending-sm">18:00</span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='2000m' %}" class="champ-event-link{% if active_event == '2000m' %} is-active{% endif %}">
+        <span>2.000 m Planos</span>
+        <span class="state-tag is-pending-sm">18:00</span>
+    </a>
+    <a href="{% url 'championship_event_results' slug=slug event_slug='300mv' %}" class="champ-event-link{% if active_event == '300mv' %} is-active{% endif %}">
+        <span>300 m Vallas</span>
+        <span class="state-tag is-pending-sm">19:00</span>
+    </a>
+</div>

@@ -1,0 +1,36 @@
+{% extends 'championship_detail_base.html' %}
+
+{% block title %}Taforma | Campeonato Nacional Sub-20 — {{ event_name }}{% endblock %}
+{% block meta_description %}Resultados oficiales de {{ event_name }} en el Campeonato Nacional Sub-20, organizado con Taforma.{% endblock %}
+
+{% block champ_content %}
+
+    <div class="champ-detail-body champ-detail-body--single">
+        <div class="champ-events-panels" id="champEventsPanels">
+            {% include 'partials/championship_events/'|add:active_event|add:'.html' %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        function initChampionshipDetail() {
+            const panels = document.getElementById('champEventsPanels');
+            if (!panels) return;
+
+            panels.addEventListener('click', (e) => {
+                const genderBtn = e.target.closest('.champ-gender-btn');
+                if (!genderBtn) return;
+
+                const switcher = genderBtn.closest('[data-gender-switch]');
+                const genderId = genderBtn.dataset.gender;
+
+                switcher.querySelectorAll('.champ-gender-btn').forEach((b) => b.classList.toggle('is-active', b === genderBtn));
+                switcher.parentElement.querySelectorAll('.champ-gender-view').forEach((v) => v.classList.toggle('is-active', v.dataset.genderView === genderId));
+            });
+        }
+
+        initChampionshipDetail();
+    </script>
+{% endblock %}

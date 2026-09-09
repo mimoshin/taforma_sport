@@ -1,0 +1,330 @@
+{% extends 'base.html' %}
+
+{% block title %}Taforma | Ranking{% endblock %}
+{% block meta_description %}Ranking de atletas por prueba, categoría y tipo de competencia, organizado con Taforma. Datos de ejemplo con fines ilustrativos.{% endblock %}
+
+{% block nav_links %}
+<a href="{% url 'calendar' %}">Calendario</a>
+<a href="{% url 'championships' %}">Campeonatos</a>
+<a href="{% url 'ranking' %}">Ranking</a>
+<a href="{% url 'principal' %}#contacto">Contacto</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-header">
+        <div class="page-header-inner">
+            <div>
+                <h1>Ranking</h1>
+                <p>Mejores marcas registradas por prueba en la temporada 2026. Datos de ejemplo con fines ilustrativos.</p>
+            </div>
+            <div class="page-header-meta">
+                <span>Temporada 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ranking-layout">
+        <form class="champ-search-bar" id="rankingFilters" role="search">
+            <select class="champ-search-select" id="rankingEventFilter" aria-label="Filtrar por prueba">
+                <option value="100mp">100 m Planos</option>
+                <option value="100mv">100 m Vallas</option>
+                <option value="salto-largo">Salto Largo</option>
+                <option value="bala">Lanzamiento Bala</option>
+            </select>
+
+            <select class="champ-search-select" id="rankingCategoryFilter" aria-label="Filtrar por categoría">
+                <option value="todas">Categoría: todas</option>
+                <option value="u16">U16</option>
+                <option value="u18">U18</option>
+                <option value="sub-20">Sub-20</option>
+                <option value="adulto">Adulto</option>
+            </select>
+
+            <select class="champ-search-select" id="rankingGenderFilter" aria-label="Filtrar por género">
+                <option value="todos">Género: todos</option>
+                <option value="hombres">Hombres</option>
+                <option value="mujeres">Mujeres</option>
+            </select>
+
+            <select class="champ-search-select" id="rankingTypeFilter" aria-label="Filtrar por tipo de competencia">
+                <option value="todos">Tipo: todos</option>
+                <option value="federado">Federado</option>
+                <option value="escolar">Escolar</option>
+                <option value="master">Máster</option>
+            </select>
+        </form>
+
+        <div class="bulletin" id="rankingPanels">
+
+            <div class="ranking-panel is-active" data-ranking-event="100mp">
+                <div class="bulletin-head">
+                    <div class="bulletin-event">
+                        100 m Planos
+                        <small>Ranking temporada 2026</small>
+                    </div>
+                </div>
+                <table class="bulletin">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Atleta</th>
+                            <th>Club</th>
+                            <th>Categoría</th>
+                            <th>Marca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-categoria="sub-20" data-genero="hombres" data-tipo="federado">
+                            <td><span class="pos-num first">1</span></td>
+                            <td><span class="athlete-name">M. Fernández</span><span class="record-tag">MP</span></td>
+                            <td>Atlético Santiago</td>
+                            <td>Sub-20 · Hombres</td>
+                            <td class="mark-time">10.42</td>
+                        </tr>
+                        <tr data-categoria="sub-20" data-genero="hombres" data-tipo="federado">
+                            <td><span class="pos-num">2</span></td>
+                            <td><span class="athlete-name">J. Herrera</span></td>
+                            <td>Club Andes</td>
+                            <td>Sub-20 · Hombres</td>
+                            <td class="mark-time">10.51</td>
+                        </tr>
+                        <tr data-categoria="u16" data-genero="hombres" data-tipo="escolar">
+                            <td><span class="pos-num">3</span></td>
+                            <td><span class="athlete-name">D. Soto</span></td>
+                            <td>Liceo San Ignacio</td>
+                            <td>U16 · Hombres</td>
+                            <td class="mark-time">11.04</td>
+                        </tr>
+                        <tr data-categoria="sub-20" data-genero="mujeres" data-tipo="federado">
+                            <td><span class="pos-num">4</span></td>
+                            <td><span class="athlete-name">V. Aránguiz</span></td>
+                            <td>Atlético Santiago</td>
+                            <td>Sub-20 · Mujeres</td>
+                            <td class="mark-time">11.68</td>
+                        </tr>
+                        <tr data-categoria="u18" data-genero="mujeres" data-tipo="escolar">
+                            <td><span class="pos-num">5</span></td>
+                            <td><span class="athlete-name">L. Rojas</span></td>
+                            <td>Colegio San Pedro</td>
+                            <td>U18 · Mujeres</td>
+                            <td class="mark-time">11.92</td>
+                        </tr>
+                        <tr data-categoria="adulto" data-genero="hombres" data-tipo="master">
+                            <td><span class="pos-num">6</span></td>
+                            <td><span class="athlete-name">R. Bravo</span></td>
+                            <td>Club Máster Uruguay</td>
+                            <td>Adulto · Hombres</td>
+                            <td class="mark-time">12.15</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
+                <div class="bulletin-foot">
+                    <span>Generado automáticamente por Taforma</span>
+                    <span class="stamp">Oficial</span>
+                </div>
+            </div>
+
+            <div class="ranking-panel" data-ranking-event="100mv">
+                <div class="bulletin-head">
+                    <div class="bulletin-event">
+                        100 m Vallas
+                        <small>Ranking temporada 2026</small>
+                    </div>
+                </div>
+                <table class="bulletin">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Atleta</th>
+                            <th>Club</th>
+                            <th>Categoría</th>
+                            <th>Marca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-categoria="u16" data-genero="hombres" data-tipo="escolar">
+                            <td><span class="pos-num first">1</span></td>
+                            <td><span class="athlete-name">J. Herrera</span><span class="record-tag">MP</span></td>
+                            <td>Liceo San Ignacio</td>
+                            <td>U16 · Hombres</td>
+                            <td class="mark-time">14.28</td>
+                        </tr>
+                        <tr data-categoria="u16" data-genero="hombres" data-tipo="escolar">
+                            <td><span class="pos-num">2</span></td>
+                            <td><span class="athlete-name">D. Soto</span></td>
+                            <td>Colegio San Pedro</td>
+                            <td>U16 · Hombres</td>
+                            <td class="mark-time">14.51</td>
+                        </tr>
+                        <tr data-categoria="u16" data-genero="mujeres" data-tipo="escolar">
+                            <td><span class="pos-num">3</span></td>
+                            <td><span class="athlete-name">M. Fernández</span></td>
+                            <td>Liceo San Ignacio</td>
+                            <td>U16 · Mujeres</td>
+                            <td class="mark-time">15.02</td>
+                        </tr>
+                        <tr data-categoria="u16" data-genero="mujeres" data-tipo="federado">
+                            <td><span class="pos-num">4</span></td>
+                            <td><span class="athlete-name">L. Rojas</span></td>
+                            <td>Club Andes</td>
+                            <td>U16 · Mujeres</td>
+                            <td class="mark-time">15.34</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
+                <div class="bulletin-foot">
+                    <span>Generado automáticamente por Taforma</span>
+                    <span class="stamp">Oficial</span>
+                </div>
+            </div>
+
+            <div class="ranking-panel" data-ranking-event="salto-largo">
+                <div class="bulletin-head">
+                    <div class="bulletin-event">
+                        Salto Largo
+                        <small>Ranking temporada 2026</small>
+                    </div>
+                </div>
+                <table class="bulletin">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Atleta</th>
+                            <th>Club</th>
+                            <th>Categoría</th>
+                            <th>Marca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-categoria="u16" data-genero="hombres" data-tipo="federado">
+                            <td><span class="pos-num first">1</span></td>
+                            <td><span class="athlete-name">D. Soto</span><span class="record-tag">MP</span></td>
+                            <td>Club Andes</td>
+                            <td>U16 · Hombres</td>
+                            <td class="mark-time">6.45</td>
+                        </tr>
+                        <tr data-categoria="sub-20" data-genero="hombres" data-tipo="federado">
+                            <td><span class="pos-num">2</span></td>
+                            <td><span class="athlete-name">R. Bravo</span></td>
+                            <td>Atlético Santiago</td>
+                            <td>Sub-20 · Hombres</td>
+                            <td class="mark-time">6.21</td>
+                        </tr>
+                        <tr data-categoria="adulto" data-genero="mujeres" data-tipo="master">
+                            <td><span class="pos-num">3</span></td>
+                            <td><span class="athlete-name">C. Espinoza</span></td>
+                            <td>Club Máster Chile</td>
+                            <td>Adulto · Mujeres</td>
+                            <td class="mark-time">5.98</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
+                <div class="bulletin-foot">
+                    <span>Generado automáticamente por Taforma</span>
+                    <span class="stamp">Oficial</span>
+                </div>
+            </div>
+
+            <div class="ranking-panel" data-ranking-event="bala">
+                <div class="bulletin-head">
+                    <div class="bulletin-event">
+                        Lanzamiento Bala
+                        <small>Ranking temporada 2026</small>
+                    </div>
+                </div>
+                <table class="bulletin">
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Atleta</th>
+                            <th>Club</th>
+                            <th>Categoría</th>
+                            <th>Marca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-categoria="u16" data-genero="hombres" data-tipo="escolar">
+                            <td><span class="pos-num first">1</span></td>
+                            <td><span class="athlete-name">E. Pizarro</span><span class="record-tag">MP</span></td>
+                            <td>Colegio San Pedro</td>
+                            <td>U16 · Hombres</td>
+                            <td class="mark-time">13.84</td>
+                        </tr>
+                        <tr data-categoria="sub-20" data-genero="hombres" data-tipo="federado">
+                            <td><span class="pos-num">2</span></td>
+                            <td><span class="athlete-name">T. Molina</span></td>
+                            <td>Club Andes</td>
+                            <td>Sub-20 · Hombres</td>
+                            <td class="mark-time">13.21</td>
+                        </tr>
+                        <tr data-categoria="adulto" data-genero="hombres" data-tipo="master">
+                            <td><span class="pos-num">3</span></td>
+                            <td><span class="athlete-name">B. Osorio</span></td>
+                            <td>Club Máster Perú</td>
+                            <td>Adulto · Hombres</td>
+                            <td class="mark-time">12.95</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bulletin-note">MP = Mejor marca personal. Datos de ejemplo con fines ilustrativos.</div>
+                <div class="bulletin-foot">
+                    <span>Generado automáticamente por Taforma</span>
+                    <span class="stamp">Oficial</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        function initRanking() {
+            const filters = document.getElementById('rankingFilters');
+            const eventFilter = document.getElementById('rankingEventFilter');
+            const categoryFilter = document.getElementById('rankingCategoryFilter');
+            const genderFilter = document.getElementById('rankingGenderFilter');
+            const typeFilter = document.getElementById('rankingTypeFilter');
+            const panelsWrap = document.getElementById('rankingPanels');
+            if (!filters || !panelsWrap) return;
+
+            const panels = Array.from(panelsWrap.querySelectorAll('.ranking-panel'));
+
+            function applyFilters() {
+                const eventId = eventFilter.value;
+                const category = categoryFilter.value;
+                const gender = genderFilter.value;
+                const type = typeFilter.value;
+
+                panels.forEach((panel) => {
+                    panel.classList.toggle('is-active', panel.dataset.rankingEvent === eventId);
+                });
+
+                const activePanel = panelsWrap.querySelector('.ranking-panel.is-active');
+                if (!activePanel) return;
+
+                activePanel.querySelectorAll('tbody tr').forEach((row) => {
+                    const matchesCategory = category === 'todas' || row.dataset.categoria === category;
+                    const matchesGender = gender === 'todos' || row.dataset.genero === gender;
+                    const matchesType = type === 'todos' || row.dataset.tipo === type;
+                    row.style.display = (matchesCategory && matchesGender && matchesType) ? '' : 'none';
+                });
+            }
+
+            filters.addEventListener('submit', (e) => e.preventDefault());
+            eventFilter.addEventListener('change', applyFilters);
+            categoryFilter.addEventListener('change', applyFilters);
+            genderFilter.addEventListener('change', applyFilters);
+            typeFilter.addEventListener('change', applyFilters);
+
+            applyFilters();
+        }
+
+        initRanking();
+    </script>
+{% endblock %}

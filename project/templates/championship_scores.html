@@ -1,0 +1,216 @@
+{% extends 'championship_detail_base.html' %}
+
+{% block title %}Taforma | Campeonato Nacional Sub-20 — Puntajes{% endblock %}
+{% block meta_description %}Ranking de puntajes por colegio del Campeonato Nacional Sub-20, organizado con Taforma.{% endblock %}
+
+{% block champ_content %}
+
+    <div class="champ-detail-body champ-detail-body--single">
+        <div class="bulletin">
+            <div class="bulletin-head">
+                <div class="bulletin-event">
+                    Ranking de puntajes por colegio
+                    <small>Categoría U16 · Torneo escolar</small>
+                </div>
+            </div>
+            <table class="bulletin scores-table" id="scoresTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Pos</th>
+                        <th>Colegio</th>
+                        <th>Puntos</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Instituto O'Higgins"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num first">1</span></td>
+                        <td><span class="athlete-name">Instituto O'Higgins</span></td>
+                        <td class="mark-time">79</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto Largo</span><b>35 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Vallas</span><b>29 pts</b></div>
+                                <div class="scores-breakdown-item"><span>2.000 m Planos</span><b>15 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Liceo Manuel de Salas"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">2</span></td>
+                        <td><span class="athlete-name">Liceo Manuel de Salas</span></td>
+                        <td class="mark-time">75</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Lanzamiento Bala</span><b>32 pts</b></div>
+                                <div class="scores-breakdown-item"><span>Salto Alto</span><b>30 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Vallas</span><b>13 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Liceo Bicentenario"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">3</span></td>
+                        <td><span class="athlete-name">Liceo Bicentenario</span></td>
+                        <td class="mark-time">69</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Lanzamiento Bala</span><b>28 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Planos</span><b>22 pts</b></div>
+                                <div class="scores-breakdown-item"><span>Salto Largo</span><b>19 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Liceo San Ignacio"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">4</span></td>
+                        <td><span class="athlete-name">Liceo San Ignacio</span></td>
+                        <td class="mark-time">57</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto Largo</span><b>28 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Planos</span><b>12 pts</b></div>
+                                <div class="scores-breakdown-item"><span>Salto con Garrocha</span><b>9 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Vallas</span><b>8 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Colegio Alemán"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">5</span></td>
+                        <td><span class="athlete-name">Colegio Alemán</span></td>
+                        <td class="mark-time">49</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>2.000 m Planos</span><b>27 pts</b></div>
+                                <div class="scores-breakdown-item"><span>Salto con Garrocha</span><b>22 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Colegio Providencia"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">6</span></td>
+                        <td><span class="athlete-name">Colegio Providencia</span></td>
+                        <td class="mark-time">45</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto con Garrocha</span><b>27 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Vallas</span><b>18 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Colegio Villa María"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">7</span></td>
+                        <td><span class="athlete-name">Colegio Villa María</span></td>
+                        <td class="mark-time">36</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto Alto</span><b>22 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Planos</span><b>14 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Colegio San Pedro"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">8</span></td>
+                        <td><span class="athlete-name">Colegio San Pedro</span></td>
+                        <td class="mark-time">29</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto Alto</span><b>11 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Planos</span><b>7 pts</b></div>
+                                <div class="scores-breakdown-item"><span>2.000 m Planos</span><b>6 pts</b></div>
+                                <div class="scores-breakdown-item"><span>Lanzamiento Bala</span><b>5 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Instituto Nacional"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">9</span></td>
+                        <td><span class="athlete-name">Instituto Nacional</span></td>
+                        <td class="mark-time">27</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto con Garrocha</span><b>22 pts</b></div>
+                                <div class="scores-breakdown-item"><span>Lanzamiento Bala</span><b>5 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="scores-row" data-school-row>
+                        <td><button type="button" class="scores-toggle" aria-expanded="false" aria-label="Ver desglose de Colegio Los Andes"><span class="scores-toggle-arrow">›</span></button></td>
+                        <td><span class="pos-num">10</span></td>
+                        <td><span class="athlete-name">Colegio Los Andes</span></td>
+                        <td class="mark-time">24</td>
+                    </tr>
+                    <tr class="scores-breakdown-row">
+                        <td colspan="4">
+                            <div class="scores-breakdown">
+                                <div class="scores-breakdown-item"><span>Salto Alto</span><b>16 pts</b></div>
+                                <div class="scores-breakdown-item"><span>100 m Planos</span><b>8 pts</b></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="bulletin-note">Los puntos se otorgan según posición final en cada prueba. Datos de ejemplo con fines ilustrativos.</div>
+            <div class="bulletin-foot">
+                <span>Generado automáticamente por Taforma</span>
+                <span class="stamp">Oficial</span>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+    <script>
+        function initChampionshipScores() {
+            const table = document.getElementById('scoresTable');
+            if (!table) return;
+
+            table.addEventListener('click', (e) => {
+                const btn = e.target.closest('.scores-toggle');
+                if (!btn) return;
+
+                const row = btn.closest('.scores-row');
+                const breakdown = row.nextElementSibling;
+                const isOpen = row.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                breakdown.classList.toggle('is-open', isOpen);
+            });
+        }
+
+        initChampionshipScores();
+    </script>
+{% endblock %}
