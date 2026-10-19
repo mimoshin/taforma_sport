@@ -54,6 +54,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+CSRF_TRUSTED_ORIGINS = [
+    os.environ.get("CSRF_HTTPS_DOMAIN"),
+    os.environ.get("CSRF_HTTPS_SUBDOMAIN"),
+]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
